@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="tema.css"/>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+<title>Aula de JavaScript e Angular</title>
+</head>
+
+<body ng-app>
+	<h1> Exemplo de expressões </h1>
+	<p> Exemplo de parágrafo: É aquele ditado: Vamos fazer o que?</p>
+	<p> {{10 + 5 * 2}} </p>
+	
+	<input type="radio" name="visivel" value="sim" ng-model="data.visivel"> Sim <br>
+	<input type="radio" name="visivel" value="nao" ng-model="data.visivel"> Não <br>
+	
+	<p ng-show="data.visivel==='sim'"> Hello, it's me.</p>
+	
+	<input type="text" ng-model="data.name">
+	
+	<h2> Nome digitado:
+		{{data.name}}
+	</h2>
+	
+
+</body>
+
+</html>
