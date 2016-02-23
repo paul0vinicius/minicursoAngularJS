@@ -4,26 +4,58 @@
   <meta charset="UTF-8">
   <link rel="stylesheet" href="tema.css"/>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+  <script src="exemplo.js"></script>
 <title>Aula de JavaScript e Angular</title>
 </head>
 
-<body ng-app>
+<body ng-app="primeira">
+	
+	<!--
+	<div ng-controller="PrimeiroController as prim">
 	<h1> Exemplo de expressões </h1>
 	<p> Exemplo de parágrafo: É aquele ditado: Vamos fazer o que?</p>
 	<p> {{10 + 5 * 2}} </p>
 	
-	<input type="radio" name="visivel" value="sim" ng-model="data.visivel"> Sim <br>
-	<input type="radio" name="visivel" value="nao" ng-model="data.visivel"> Não <br>
+	<input type="radio" name="visivel" value="sim" ng-model="prim.data.visivel"> Sim <br>
+	<input type="radio" name="visivel" value="nao" ng-model="prim.data.visivel"> Não <br>
 	
-	<p ng-show="data.visivel==='sim'"> Hello, it's me.</p>
+	<p ng-show="prim.data.visivel==='sim'"> Hello, it's me.</p>
 	
-	<input type="text" ng-model="data.name">
+	<input type="text" ng-model="prim.data.name">
 	
 	<h2> Nome digitado:
-		{{data.name}}
+		{{prim.data.name}}
 	</h2>
 	
+	<button ng-click="prim.next">Anterior</button>
+	<button ng-click="prim.previous">Próximo</button>
+	
+</div>
 
+-->
+
+<div ng-controller="PrimeiroController as prim">
+	
+	<h2> Nome do estudante:
+		{{prim.escolhido.name}}
+	</h2>
+	
+	<h2> 
+		Nota:
+		{{prim.escolhido.nota}}
+	</h2>
+	
+	<input type="text" ng-model="prim.novoNome">
+	<input type="float" ng-model="prim.novaNota">
+	
+	
+	
+	<button ng-click="prim.anterior()">Anterior</button>
+	<button ng-click="prim.proximo()">Próximo</button>
+	
+	<button ng-click="prim.criar(prim.novoNome, prim.NovaNota)">Criar</button>
+
+</div>
 </body>
 
 </html>
